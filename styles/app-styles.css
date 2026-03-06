@@ -1,0 +1,85 @@
+.info-row{
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.icon-btn{
+  margin: 4px;
+  background: white;
+  border: 1px solid rgba(255,255,255,0.65);
+  border-radius: 10px;
+  padding: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  width: 34px;
+  height: 34px;
+}
+
+.icon-btn:focus-visible{
+  outline: 2px solid rgba(255,255,255,0.9);
+  outline-offset: 2px;
+}
+
+.icon-btn i, .icon-btn svg{
+  width: 18px;
+  height: 18px;
+  color: rgb(81,81,81);
+}
+
+.icon-btn svg{
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+.hidden{ display: none !important; }
+
+.loading-spinner{
+  --p: 0;
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: white;
+  border: 1px solid rgba(255,255,255,0.65);
+  margin: 4px;
+  position: relative;
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(81,81,81,0.9);
+  font-variant-numeric: tabular-nums;
+}
+
+.loading-spinner::before{
+  content: "";
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: conic-gradient(rgba(81,81,81,0.95) calc(var(--p) * 1%), rgba(81,81,81,0.12) 0);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 0);
+  mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 0);
+}
+
+.loading-spinner::after{
+  content: attr(data-pct);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-size: 9px;
+  font-weight: 700;
+  opacity: 1;
+}
+
+.loading-spinner[data-pct="100"]::after{
+  content: "";
+  opacity: 0;
+}

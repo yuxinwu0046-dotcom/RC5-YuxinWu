@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Skill</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/app-styles.css">
+</head>
+
+<body>
+    <div id="ui-root">
+
+        <!-- buttons -->
+        <div class="panel info">
+            <div class="info-row">
+                <button id="btnBack" class="icon-btn" title="Back" aria-label="Back">
+                    <i data-lucide="arrow-left"></i>
+                </button>
+
+                <button id="btnToggleToolbar" class="icon-btn" title="Toggle tools" aria-label="Toggle tools">
+                    <i data-lucide="move-3d"></i>
+                </button>
+
+                <button id="btnToggleParams" class="icon-btn" title="Toggle parameters" aria-label="Toggle parameters">
+                    <i data-lucide="sliders-horizontal"></i>
+                </button>
+
+                <button id="btnToggleChat" class="icon-btn" title="Toggle chat" aria-label="Toggle chat">
+                    <i data-lucide="message-square"></i>
+                </button>
+
+                <div id="loadingSpinner" class="loading-spinner" aria-label="Loading" data-pct="0"></div>
+
+
+            </div>
+
+        </div>
+
+        <!-- tools -->
+        <div class="panel toolbar">
+            <button id="btnMove" class="active">Move</button>
+            <button id="btnRotate">Rotate</button>
+            <button id="btnScale">Scale</button>
+        </div>
+
+        <!-- chat -->
+        <div class="panel chat" style="right: 20px; bottom: 20px; pointer-events: auto; width: 360px;">
+
+            <div id="chatMessages" style="height: 180px; overflow-y: auto; padding: 8px; background: rgba(255,255,255,0.65);
+           border: 1px solid rgba(0,0,0,0.12); border-radius: 12px; margin-bottom: 8px;">
+            </div>
+
+            <div style="display:flex; gap:8px; align-items:flex-end;">
+                <textarea id="chatInput" placeholder="Describe what you want… (Enter to send, Shift+Enter for newline)"
+                    rows="5"
+                    style="flex:1; resize:none; padding:8px; border-radius:10px; border:1px solid rgba(0,0,0,0.2);"></textarea>
+                <button id="chatSend"
+                    style="padding:8px 12px; border-radius:10px; border:1px solid rgba(0,0,0,0.2); cursor:pointer;">
+                    Send
+                </button>
+            </div>
+        </div>
+
+
+        <!-- sliders -->
+        <div class="panel sliders" style="top: 120px; left: 20px; pointer-events: auto; width: 260px;">
+            <div style="font-weight: 600; margin-bottom: 8px; color:#bc916d">Parameters</div>
+
+            <!-- Chair1XLocation -->
+            <div style="margin-bottom: 10px;">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <label for="sChair1XLocation" style="color:#bc916d">Chair1XLocation</label>
+                    <span id="vChair1XLocation" style="color:#bc916d">0</span>
+                </div>
+                <input id="sChair1XLocation" type="range" min="0" max="1000" step="1" value="1" style="width:100%;">
+            </div>
+
+            <!-- Chair1YLocation -->
+            <div style="margin-bottom: 10px;">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <label for="sChair1YLocation" style="color:#bc916d">Chair1YLocation</label>
+                    <span id="vChair1YLocation" style="color:#bc916d">0</span>
+                </div>
+                <input id="sChair1YLocation" type="range" min="0" max="1000" step="1" value="1" style="width:100%;">
+            </div>
+
+            <!-- Chair2XLocation -->
+            <div style="margin-bottom: 10px;">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <label for="sChair2XLocation" style="color:#bc916d">Chair2XLocation</label>
+                    <span id="vChair2XLocation" style="color:#bc916d">0</span>
+                </div>
+                <input id="sChair2XLocation" type="range" min="0" max="1000" step="1" value="1" style="width:100%;">
+            </div>
+
+            <!-- Chair2YLocation -->
+            <div style="margin-bottom: 10px;">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <label for="sChair2YLocation" style="color:#bc916d">Chair2YLocation</label>
+                    <span id="vChair2YLocation" style="color:#bc916d">0</span>
+                </div>
+                <input id="sChair2YLocation" type="range" min="0" max="1000" step="1" value="1" style="width:100%;">
+            </div>
+
+            <!-- Chair3XLocation -->
+            <div>
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <label for="sChair3XLocation" style="color:#bc916d">Chair3XLocation</label>
+                    <span id="vChair3XLocation" style="color:#bc916d">0</span>
+                </div>
+                <input id="sChair3XLocation" type="range" min="0" max="1000" step="1" value="1" style="width:100%;">
+            </div>
+
+            <!-- Chair3YLocation -->
+            <div>
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <label for="sChair3YLocation" style="color:#bc916d">Chair3YLocation</label>
+                    <span id="vChair3YLocation" style="color:#bc916d">0</span>
+                </div>
+                <input id="sChair3YLocation" type="range" min="0" max="1000" step="1" value="1" style="width:100%;">
+            </div>
+
+            <!-- Chair4XLocation -->
+            <div>
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <label for="sChair4XLocation" style="color:#bc916d">Chair4XLocation</label>
+                    <span id="vChair4XLocation" style="color:#bc916d">0</span>
+                </div>
+                <input id="sChair4XLocation" type="range" min="0" max="1000" step="1" value="1" style="width:100%;">
+            </div>
+
+            <!-- Chair4YLocation -->
+            <div>
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <label for="sChair4YLocation" style="color:#bc916d">Chair4YLocation</label>
+                    <span id="vChair4YLocation" style="color:#bc916d">0</span>
+                </div>
+                <input id="sChair4YLocation" type="range" min="0" max="1000" step="1" value="1" style="width:100%;">
+            </div>
+
+            <!-- DeskLocation -->
+            <div>
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <label for="sDeskLocation" style="color:#bc916d">DeskLocation</label>
+                    <span id="vDeskLocation" style="color:#bc916d">0</span>
+                </div>
+                <input id="sDeskLocation" type="range" min="0" max="500" step="1" value="1" style="width:100%;">
+            </div>
+        </div>
+
+
+    </div>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.182.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.182.0/examples/jsm/"
+  }
+}
+</script>
+    <script type="module" src="./app.js"></script>
+</body>
+
+</html>
