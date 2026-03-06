@@ -24,9 +24,9 @@ import {
 
 ///IMPORTANT
 const firebaseConfig = {
-    apiKey: "AIzaSyCARdnr9B-Ud3KFkm8pF3CrebmmMg3BG6Q",
-    authDomain: "skill-b17bc.firebaseapp.com",
-    projectId: "skill-b17bc"
+    apiKey: "AIzaSyD79I-GkZu8GbHSa0s4FBfQyCqzA9a_xtk",
+    authDomain: "rc5-yuxin.firebaseapp",
+    projectId: "rc5-yuxin"
 };
 
 const app = initializeApp(firebaseConfig);
