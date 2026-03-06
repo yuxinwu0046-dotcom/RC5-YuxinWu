@@ -25,7 +25,7 @@ import {
 ///IMPORTANT
 const firebaseConfig = {
     apiKey: "AIzaSyD79I-GkZu8GbHSa0s4FBfQyCqzA9a_xtk",
-    authDomain: "rc5-yuxin.firebaseapp",
+    authDomain: "rc5-yuxin.firebaseapp.com",
     projectId: "rc5-yuxin"
 };
 
